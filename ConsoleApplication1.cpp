@@ -4,17 +4,14 @@
 #include<vector>
 
 int main() {
-	int n;
-	std::cin >> n;
-	int a[100];
-	for (int i = 0; i < n; i++) {
-		std::cin >> a[i];
-	}
-	int max = a[0];
-	for (int i = 1; i < n; i++) {
-		if (a[i] > max) {
-			max = a[i];
+	int a, b;
+	std::cin >> a >> b;
+	int max = a > b ? a : b;
+	for (int i = max; i <= a * b; ++i) {
+		if (i % a == 0 && i % b == 0) {
+			std::cout << i;
+			return 0;
 		}
 	}
-	std::cout << max;
+	std::cout << a * b;
 }
